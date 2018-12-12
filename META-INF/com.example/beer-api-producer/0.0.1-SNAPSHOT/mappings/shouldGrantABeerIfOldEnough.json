@@ -1,0 +1,26 @@
+{
+  "id" : "24fddd36-e434-4ff5-8f73-4cf906b89891",
+  "request" : {
+    "url" : "/check",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['age'] == 22)]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['name'] == 'marcin')]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"status\":\"OK\"}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "24fddd36-e434-4ff5-8f73-4cf906b89891"
+}

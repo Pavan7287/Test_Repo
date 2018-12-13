@@ -1,5 +1,5 @@
 {
-  "id" : "e38e78b7-c200-4cba-9cd7-7c2d2200b8e9",
+  "id" : "acdb0a13-513a-4205-b678-67df1203ff07",
   "request" : {
     "url" : "/ValidateMO",
     "method" : "POST",
@@ -17,9 +17,9 @@
     }, {
       "matchesJsonPath" : "$.['phoneNumbers'][?(@ == '123456')]"
     }, {
-      "matchesJsonPath" : "$.['personalInformation'][?(@.['gender'] == 'Male')]"
+      "matchesJsonPath" : "$.['personalInformation'][?(@.['maritialstatus'] == 'Single')]"
     }, {
-      "matchesJsonPath" : "$.['personalInformation'][?(@.['maritialstatus'] == 'married')]"
+      "matchesJsonPath" : "$.['personalInformation'][?(@.['gender'] == 'Male')]"
     }, {
       "matchesJsonPath" : "$[?(@.id =~ /([0-9]{2})/)]"
     }, {
@@ -42,5 +42,5 @@
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "e38e78b7-c200-4cba-9cd7-7c2d2200b8e9"
+  "uuid" : "acdb0a13-513a-4205-b678-67df1203ff07"
 }

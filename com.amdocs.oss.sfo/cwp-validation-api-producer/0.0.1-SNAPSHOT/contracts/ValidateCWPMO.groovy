@@ -11,7 +11,7 @@ Contract.make{
     
     method 'POST'
     url    '/ValidateMO'
-    body(file("C:\\cwp_mo.json"))
+    body(file("cwp_mo.json"))
     bodyMatchers {
         jsonPath('$.id',byRegex("[0-9]{2}"))
         jsonPath('$.name',byRegex('[A-Za-z]+'))

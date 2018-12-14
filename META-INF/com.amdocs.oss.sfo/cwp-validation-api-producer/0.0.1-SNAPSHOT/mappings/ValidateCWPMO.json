@@ -1,0 +1,46 @@
+{
+  "id" : "3cd1b37d-fe87-47dc-8d22-177795697b82",
+  "request" : {
+    "url" : "/ValidateMO",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$.['phoneNumbers'][?(@ == '987654')]"
+    }, {
+      "matchesJsonPath" : "$.['address'][?(@.['street'] == 'Park Avn')]"
+    }, {
+      "matchesJsonPath" : "$.['address'][?(@.['city'] == 'West chester')]"
+    }, {
+      "matchesJsonPath" : "$.['phoneNumbers'][?(@ == '123456')]"
+    }, {
+      "matchesJsonPath" : "$.['personalInformation'][?(@.['maritialstatus'] == 'Single')]"
+    }, {
+      "matchesJsonPath" : "$.['personalInformation'][?(@.['gender'] == 'Male')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.id =~ /([0-9]{2})/)]"
+    }, {
+      "matchesJsonPath" : "$[?(@.name =~ /([A-Za-z]+)/)]"
+    }, {
+      "matchesJsonPath" : "$[?(@.age =~ /([2-9][0-9])/)]"
+    }, {
+      "matchesJsonPath" : "$[?(@.salary =~ /([1-9][0-9]{5})/)]"
+    }, {
+      "matchesJsonPath" : "$[?(@.designation =~ /([A-Za-z]+)/)]"
+    }, {
+      "matchesJsonPath" : "$.address[?(@.zipCode =~ /([0-9]{5})/)]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"status\":\"OK\"}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "3cd1b37d-fe87-47dc-8d22-177795697b82"
+}

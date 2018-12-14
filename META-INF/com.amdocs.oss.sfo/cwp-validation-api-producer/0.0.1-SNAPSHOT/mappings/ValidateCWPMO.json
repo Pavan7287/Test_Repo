@@ -1,5 +1,5 @@
 {
-  "id" : "9535c940-a0d6-465f-8b5f-632d03de597b",
+  "id" : "45901cc3-3b14-4e94-9d6d-0ec3d0cd72dd",
   "request" : {
     "url" : "/ValidateMO",
     "method" : "POST",
@@ -11,6 +11,8 @@
     "bodyPatterns" : [ {
       "matchesJsonPath" : "$.['phoneNumbers'][?(@ == '987654')]"
     }, {
+      "matchesJsonPath" : "$.['personalInformation'][?(@.['gender'] == 'Female')]"
+    }, {
       "matchesJsonPath" : "$.['address'][?(@.['street'] == 'Park Avn')]"
     }, {
       "matchesJsonPath" : "$.['address'][?(@.['city'] == 'West chester')]"
@@ -18,8 +20,6 @@
       "matchesJsonPath" : "$.['phoneNumbers'][?(@ == '123456')]"
     }, {
       "matchesJsonPath" : "$.['personalInformation'][?(@.['maritialstatus'] == 'Single')]"
-    }, {
-      "matchesJsonPath" : "$.['personalInformation'][?(@.['gender'] == 'Male')]"
     }, {
       "matchesJsonPath" : "$[?(@.id =~ /([0-9]{2})/)]"
     }, {
@@ -42,5 +42,5 @@
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "9535c940-a0d6-465f-8b5f-632d03de597b"
+  "uuid" : "45901cc3-3b14-4e94-9d6d-0ec3d0cd72dd"
 }

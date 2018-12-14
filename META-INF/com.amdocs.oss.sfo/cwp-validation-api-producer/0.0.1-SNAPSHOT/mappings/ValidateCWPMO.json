@@ -1,5 +1,5 @@
 {
-  "id" : "3cd1b37d-fe87-47dc-8d22-177795697b82",
+  "id" : "e815b06f-496c-4781-84e5-57ecea5de041",
   "request" : {
     "url" : "/ValidateMO",
     "method" : "POST",
@@ -42,5 +42,5 @@
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "3cd1b37d-fe87-47dc-8d22-177795697b82"
+  "uuid" : "e815b06f-496c-4781-84e5-57ecea5de041"
 }

@@ -1,5 +1,5 @@
 {
-  "id" : "499cfeb2-f679-43c2-bf51-e47650df7e49",
+  "id" : "3759bf9b-b86a-4f6a-b090-0af1f67e4eb9",
   "request" : {
     "url" : "/ValidateMO",
     "method" : "POST",
@@ -14,8 +14,6 @@
       "matchesJsonPath" : "$.['phoneNumbers'][?(@ == '987654')]"
     }, {
       "matchesJsonPath" : "$.['phoneNumbers'][?(@ == '123456')]"
-    }, {
-      "matchesJsonPath" : "$.['address'][*][?(@.['zipCode'] == '{zip_val}')]"
     }, {
       "matchesJsonPath" : "$.['personalInformation'][?(@.['gender'] == 'Male')]"
     }, {
@@ -37,7 +35,9 @@
     }, {
       "matchesJsonPath" : "$[?(@.designation =~ /([A-Za-z]+)/)]"
     }, {
-      "matchesJsonPath" : "$.address.children()[?(@.zipCode =~ /([0-9]{5})/)]"
+      "matchesJsonPath" : "$.address[0][?(@.zipCode =~ /([0-9]{5})/)]"
+    }, {
+      "matchesJsonPath" : "$.address[1][?(@.zipCode =~ /([0-9]{5})/)]"
     } ]
   },
   "response" : {
@@ -48,5 +48,5 @@
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "499cfeb2-f679-43c2-bf51-e47650df7e49"
+  "uuid" : "3759bf9b-b86a-4f6a-b090-0af1f67e4eb9"
 }

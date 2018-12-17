@@ -18,7 +18,8 @@ Contract.make{
         jsonPath('$.age',byRegex('[2-9][0-9]'))
         jsonPath('$.salary',byRegex('[1-9][0-9]{5}'))
         jsonPath('$.designation',byRegex('[A-Za-z]+'))
-        jsonPath('$.address.children().zipCode', byRegex('[0-9]{5}'))
+        jsonPath('$.address[0].zipCode',byRegex('[0-9]{5}'))
+        jsonPath('$.address[1].zipCode',byRegex('[0-9]{5}'))
 
 
     }

@@ -1,5 +1,5 @@
 {
-  "id" : "45901cc3-3b14-4e94-9d6d-0ec3d0cd72dd",
+  "id" : "10e002b3-24f4-4cae-9105-ce40368d4c62",
   "request" : {
     "url" : "/ValidateMO",
     "method" : "POST",
@@ -9,17 +9,21 @@
       }
     },
     "bodyPatterns" : [ {
+      "matchesJsonPath" : "$.['address'][*][?(@.['city'] == 'Melbourne')]"
+    }, {
       "matchesJsonPath" : "$.['phoneNumbers'][?(@ == '987654')]"
-    }, {
-      "matchesJsonPath" : "$.['personalInformation'][?(@.['gender'] == 'Female')]"
-    }, {
-      "matchesJsonPath" : "$.['address'][?(@.['street'] == 'Park Avn')]"
-    }, {
-      "matchesJsonPath" : "$.['address'][?(@.['city'] == 'West chester')]"
     }, {
       "matchesJsonPath" : "$.['phoneNumbers'][?(@ == '123456')]"
     }, {
-      "matchesJsonPath" : "$.['personalInformation'][?(@.['maritialstatus'] == 'Single')]"
+      "matchesJsonPath" : "$.['personalInformation'][?(@.['gender'] == 'Male')]"
+    }, {
+      "matchesJsonPath" : "$.['personalInformation'][?(@.['maritialstatus'] == 'married')]"
+    }, {
+      "matchesJsonPath" : "$.['address'][*][?(@.['city'] == 'West chester')]"
+    }, {
+      "matchesJsonPath" : "$.['address'][*][?(@.['street'] == 'Bourke Street')]"
+    }, {
+      "matchesJsonPath" : "$.['address'][*][?(@.['street'] == 'Park Avn')]"
     }, {
       "matchesJsonPath" : "$[?(@.id =~ /([0-9]{2})/)]"
     }, {
@@ -31,7 +35,7 @@
     }, {
       "matchesJsonPath" : "$[?(@.designation =~ /([A-Za-z]+)/)]"
     }, {
-      "matchesJsonPath" : "$.address[?(@.zipCode =~ /([0-9]{5})/)]"
+      "matchesJsonPath" : "$.address[*][?(@.zipCode =~ /([0-9]{5})/)]"
     } ]
   },
   "response" : {
@@ -42,5 +46,5 @@
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "45901cc3-3b14-4e94-9d6d-0ec3d0cd72dd"
+  "uuid" : "10e002b3-24f4-4cae-9105-ce40368d4c62"
 }

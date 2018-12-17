@@ -4,17 +4,22 @@
   "age": "{age_val}",
   "salary": "{salary_val}",
   "designation": "{programmer_val}",
-  "address": {
+  "address": [{
     "street": "Park Avn",
     "city": "West chester",
     "zipCode": "{zip_val}"
-  },
+    },
+    {
+      "street": "Bourke Street",
+      "city": "Melbourne",
+      "zipCode": "{zip1_val}"
+    }],
   "phoneNumbers": [
     "123456",
     "987654"
   ],
   "personalInformation": {
-    "gender": "Female",
-    "maritialstatus": "Single"
+    "gender": "Male",
+    "maritialstatus": "married"
   }
 }

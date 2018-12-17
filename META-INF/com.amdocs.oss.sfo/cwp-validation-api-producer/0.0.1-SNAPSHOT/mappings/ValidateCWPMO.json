@@ -1,5 +1,5 @@
 {
-  "id" : "5be4648a-cd29-4272-84d2-efd2fbfddbad",
+  "id" : "d2ddc191-72cd-47f6-9a21-49542ccfb3ea",
   "request" : {
     "url" : "/ValidateMO",
     "method" : "POST",
@@ -14,8 +14,6 @@
       "matchesJsonPath" : "$.['phoneNumbers'][?(@ == '987654')]"
     }, {
       "matchesJsonPath" : "$.['phoneNumbers'][?(@ == '123456')]"
-    }, {
-      "matchesJsonPath" : "$.['address'][*][?(@.['zipCode'] == '{zip_val}')]"
     }, {
       "matchesJsonPath" : "$.['personalInformation'][?(@.['gender'] == 'Male')]"
     }, {
@@ -37,7 +35,7 @@
     }, {
       "matchesJsonPath" : "$[?(@.designation =~ /([A-Za-z]+)/)]"
     }, {
-      "matchesJsonPath" : "$.[address][*][?(@.zipCode =~ /([0-9]{5})/)]"
+      "matchesJsonPath" : "$.address[*][?(@.zipCode =~ /([0-9]{5})/)]"
     } ]
   },
   "response" : {
@@ -48,5 +46,5 @@
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "5be4648a-cd29-4272-84d2-efd2fbfddbad"
+  "uuid" : "d2ddc191-72cd-47f6-9a21-49542ccfb3ea"
 }

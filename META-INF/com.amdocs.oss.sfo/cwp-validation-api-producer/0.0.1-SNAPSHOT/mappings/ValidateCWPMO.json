@@ -1,5 +1,5 @@
 {
-  "id" : "2fe0c9c5-784c-4c2e-8416-bc165055ed39",
+  "id" : "f2c98073-6878-4295-8290-1ab8831d154b",
   "request" : {
     "url" : "/ValidateMO",
     "method" : "POST",
@@ -35,7 +35,7 @@
     }, {
       "matchesJsonPath" : "$[?(@.designation =~ /([A-Za-z]+)/)]"
     }, {
-      "matchesJsonPath" : "$.address.*[?(@.zipCode =~ /([0-9]{5})/)]"
+      "matchesJsonPath" : "$.address.[?(@.zipCode =~ /([0-9]{5})/)]"
     } ]
   },
   "response" : {
@@ -46,5 +46,5 @@
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "2fe0c9c5-784c-4c2e-8416-bc165055ed39"
+  "uuid" : "f2c98073-6878-4295-8290-1ab8831d154b"
 }

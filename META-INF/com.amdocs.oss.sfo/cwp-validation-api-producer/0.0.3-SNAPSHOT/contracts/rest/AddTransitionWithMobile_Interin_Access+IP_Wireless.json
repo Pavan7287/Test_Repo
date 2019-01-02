@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "systemId": "CloudSense",
+  "externalId": "{externalId}",
+  "orderSpecificationCode": "CloudSense_CPO",
+  "orderCharacteristic": [
+    {
+      "value": "{orderCreationDate}",
+      "name": "orderCreationDate"
+    },
+    {
+      "value": "{Project_Manager_Required}",
+      "name": "Project_Manager_Required"
+    },
+    {
+      "value": "{Project_ID}",
+      "name": "Project_ID"
+    },
+    {
+      "value": "{orderComplexity}",
+      "name": "orderComplexity"
+    },
+    {
+      "value": "{customerBusinessUnit}",
+      "name": "customerBusinessUnit"
+    },
+    {
+      "value": "{Project_Manager_ID}",
+      "name": "Project_Manager_ID"
+    },
+    {
+      "value": 9696969696,
+      "name": "Project_Manager_phoneNumber"
+    },
+    {
+      "value": "{Project_Manager_emailId}",
+      "name": "Project_Manager_emailId"
+    },
+    {
+      "value": "{SalesUserId}",
+      "name": "SalesUserId"
+    },
+    {
+      "value": "{SalesUserFirstName}",
+      "name": "SalesUserFirstName"
+    },
+    {
+      "value": "{SalesUserLastName}",
+      "name": "SalesUserLastName"
+    },
+    {
+      "value": "{SalesUserContactNumber}",
+      "name": "SalesUserContactNumber"
+    },
+    {
+      "value": "{SalesUserEmailId}",
+      "name": "SalesUserEmailId"
+    }
+  ],
+  "relatedParty": [
+    {
+      "id":"{id}",
+      "name": "{name}",
+      "type": "{type}",
+      "role": "customer"
+    }
+  ],
+  "orderItem": [
+    {
+      "id":"{id}",
+      "version": 1,
+      "action": "{action}",
+      "orderItemCharacteristic": [
+        {
+          "name": "CPEDeliveryDate",
+          "value": "{CPEDeliveryDate}"
+        },
+        {
+          "name": "AppointmentNotes",
+          "value": "{AppointmentNotes}"
+        },
+        {
+          "name": "notBeforeCRD",
+          "value": "{notBeforeCRD}"
+        },
+        {
+          "name": "preferredCRD",
+          "value": "{preferredCRD}"
+        },
+        {
+          "name": "notes",
+          "value": "{notes}"
+        }
+      ],
+      "product": {
+        "id":"{id}",
+        "action": "{action}",
+        "productSpecification": {"code": "{productSpecificationCode}"},
+        "place": [
+          {
+            "contact": [
+              {
+                "id": "{id}",
+                "type": "{type}",
+                "givenName": "{givenName}",
+                "familyName": "{familyName}",
+                "contactMedium": [
+                  {
+                    "type": "Email",
+                    "medium": {"emailAddress": "{emailAddress}"}
+                  },
+                  {
+                    "type": "Telephone",
+                    "medium": {"number": "{Telephone}"}
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "productRelationship": [
+          {
+            "type": "contains",
+            "product": {
+              "id":"{id}",
+              "action": "{action}",
+              "productSpecification": {"code": "{productSpecificationCode}"}
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

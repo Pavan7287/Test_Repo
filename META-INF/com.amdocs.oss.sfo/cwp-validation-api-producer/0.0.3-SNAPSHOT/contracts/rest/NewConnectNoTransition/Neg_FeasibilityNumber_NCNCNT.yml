@@ -1,0 +1,25 @@
+name: Neg_FeasibilityNumber_NCNCNT
+priority: 1
+request:
+  method: POST
+  url: /orderorchestration/rest/ordermanager/productorders
+  body:
+    orderItem:
+      - orderItemCharacteristic:
+        - name: "feasibilityNumber"
+          value: "{feasibilityNumber}"
+  headers:
+    Contract-Type: CWP - New Connect Order
+    Content-Type: application/json
+  matchers:
+    body:
+    - path: $.orderItem.*.orderItemCharacteristic.[?(@.name=='feasibilityNumber')].value
+      type: by_regex
+      value: "^(?!(\\w+)$).*"
+      
+response:
+  status: 400
+  body:  # (9)
+    Error Message: "Invalid feasibilityNumber. It should be String only."
+  headers: # (10)
+    Content-Type: application/json

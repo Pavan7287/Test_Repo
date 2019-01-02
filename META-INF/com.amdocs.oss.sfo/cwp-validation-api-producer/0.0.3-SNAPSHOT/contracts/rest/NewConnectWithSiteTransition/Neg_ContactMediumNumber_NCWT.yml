@@ -1,0 +1,31 @@
+name: Neg_ContactMediumNumber_NCWT
+priority: 1
+
+request:
+  method: POST
+  url: /orderorchestration/rest/ordermanager/productorders
+  body:
+    orderItem:
+      - product:
+          place:
+            - contact:
+              - contactMedium:
+                - type: "Telephone"
+                  medium:
+                    number: "{Telephone}"
+
+  headers:
+    Contract-Type: CWP - New Connect Order with transition
+    Content-Type: application/json
+  matchers:
+    body:
+    - path: $.orderItem.*.product.place.*.contact.*.contactMedium.[?(@.type=='Telephone')].medium.number
+      type: by_regex
+      value: "^(?!(\\+?([0-9]{10}|[0-9]{12}))$).*"
+
+response:
+  status: 400
+  body:  # (9)
+    Error Message: "Invalid orderItem.*.product.place.*.contact.*.contactMedium.medium.number. It should be 10 or 12 digits"
+  headers: # (10)
+    Content-Type: application/json

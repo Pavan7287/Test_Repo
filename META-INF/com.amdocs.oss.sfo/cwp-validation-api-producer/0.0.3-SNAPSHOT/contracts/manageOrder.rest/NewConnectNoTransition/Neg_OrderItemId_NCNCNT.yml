@@ -1,0 +1,25 @@
+name: Neg_OrderItemId_NCNCNT
+priority: 1
+request:
+  method: POST
+  url: /orderorchestration/rest/ordermanager/productorders
+  body:
+    orderItem:
+      - id: "{id}"
+
+  headers:
+    Contract-Type: CWP - New Connect Order
+    Content-Type: application/json
+  matchers:
+    body:
+    - path: $.orderItem.*.id
+      type: by_regex
+      value: "^(?!(\\s*\\S[\\S\\s]*)$).*"
+
+response:
+  status: 400
+  body:  # (9)
+    Error Message: "Invalid orderItem.*.id"
+    Attribute Values: "{{{jsonpath this 'orderItem.*.id'}}}"
+  headers: # (10)
+    Content-Type: application/json

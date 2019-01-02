@@ -1,0 +1,29 @@
+name: Neg_ProductRelationshipSpecCode_NCNCNT
+priority: 1
+request:
+  method: POST
+  url: /orderorchestration/rest/ordermanager/productorders
+  body:
+    orderItem:
+      - product:
+          productRelationship:
+            - product:
+                productSpecification:
+                  code: "{productSpecificationCode}"
+
+  headers:
+    Contract-Type: CWP - New Connect Order
+    Content-Type: application/json
+  matchers:
+    body:
+    - path: $.orderItem.*.product.productRelationship.*.product.productSpecification.code
+      type: by_regex
+      value: "^(?!(DMCAT_ProductSpecification_000018|DMCAT_ProductSpecification_000053|DMCAT_ProductSpecification_000076|DMCAT_ProductSpecification_000077|DMCAT_ProductSpecification_000074|DMCAT_ProductSpecification_000112|DMCAT_ProductSpecification_000097|DMCAT_ProductSpecification_000109|DMCAT_ProductSpecification_000117|DMCAT_ProductSpecification_000313|DMCAT_ProductSpecification_000315|DMCAT_ProductSpecification_000324)$).*"
+
+response:
+  status: 400
+  body:  # (9)
+    Error Message: "Invalid orderItem.*.product.productRelationship.*.product.productSpecification.code"
+    Attribute Values: "{{{jsonpath this 'orderItem.*.product.productRelationship.*.product.productSpecification.code'}}}"
+  headers: # (10)
+    Content-Type: application/json

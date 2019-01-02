@@ -1,5 +1,5 @@
 {
-  "id" : "4125f83e-2ccc-4500-bd07-a3baf9cfa16a",
+  "id" : "12a34f9f-1bdc-4fb2-997f-39a9986c0965",
   "request" : {
     "url" : "/ValidateMO",
     "method" : "POST",
@@ -9,17 +9,29 @@
       }
     },
     "bodyPatterns" : [ {
-      "matchesJsonPath" : "$.['address'][*][?(@.['city'] == 'Melbourne')]"
+      "matchesJsonPath" : "$[?(@.['designation'] == '{programmer_val}')]"
     }, {
-      "matchesJsonPath" : "$.['phoneNumbers'][?(@ == '987654')]"
+      "matchesJsonPath" : "$[?(@.['id'] == '{id_val}')]"
     }, {
-      "matchesJsonPath" : "$.['phoneNumbers'][?(@ == '123456')]"
+      "matchesJsonPath" : "$.['address'][*][?(@.['zipCode'] == '{zip_val}')]"
     }, {
-      "matchesJsonPath" : "$.['personalInformation'][?(@.['gender'] == 'Male')]"
+      "matchesJsonPath" : "$[?(@.['name'] == '{name_val}')]"
     }, {
       "matchesJsonPath" : "$.['personalInformation'][?(@.['maritialstatus'] == 'married')]"
     }, {
       "matchesJsonPath" : "$.['address'][*][?(@.['city'] == 'West chester')]"
+    }, {
+      "matchesJsonPath" : "$.['address'][*][?(@.['city'] == 'Melbourne')]"
+    }, {
+      "matchesJsonPath" : "$.['phoneNumbers'][?(@ == '987654')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['salary'] == '{salary_val}')]"
+    }, {
+      "matchesJsonPath" : "$.['phoneNumbers'][?(@ == '123456')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['age'] == '{age_val}')]"
+    }, {
+      "matchesJsonPath" : "$.['personalInformation'][?(@.['gender'] == 'Male')]"
     }, {
       "matchesJsonPath" : "$.['address'][*][?(@.['street'] == 'Bourke Street')]"
     }, {
@@ -46,5 +58,5 @@
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "4125f83e-2ccc-4500-bd07-a3baf9cfa16a"
+  "uuid" : "12a34f9f-1bdc-4fb2-997f-39a9986c0965"
 }

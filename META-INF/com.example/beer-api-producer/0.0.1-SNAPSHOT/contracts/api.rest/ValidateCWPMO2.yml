@@ -1,0 +1,27 @@
+name: Validating A CWP MO For New Customer2
+request:
+  method: POST
+  url: /ValidateMO
+  bodyFromFile: cwp_mo.json
+  headers:
+    contract: contract2
+    Content-Type: application/json
+  matchers:
+    body:
+      - path: $.id
+        type: by_regex
+        value: "[1-9]{3}"
+      - path: $.address.*.zipCode
+        type: by_regex
+        value: "[0-9]{5}"
+      - path: $.address
+        type: by_type
+        maxOccurrence: 3
+        minOccurrence: 3
+
+response:
+  status: 200
+  body:  # (9)
+    "status": "OK"
+  headers: # (10)
+    Content-Type: application/json

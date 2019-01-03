@@ -2,7 +2,7 @@ name: Validating A CWP MO For New Customer2
 request:
   method: POST
   url: /ValidateMO
-  bodyFromFile: cwp_mo2.json
+  bodyFromFile: cwp_mo.json
   headers:
     contract: contract2
     Content-Type: application/json

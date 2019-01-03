@@ -1,5 +1,5 @@
 name: Validating A CWP MO For New Customer
-priority: 8
+priority: 1
 request:
   method: POST
   url: /ValidateMO

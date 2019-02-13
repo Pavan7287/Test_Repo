@@ -1,0 +1,30 @@
+{
+  "id" : "6dfa4a48-09c0-498f-ad2a-8842ebf2f3a0",
+  "request" : {
+    "url" : "/orderorchestration/rest/ordermanager/productorders",
+    "method" : "POST",
+    "headers" : {
+      "Contract-Type" : {
+        "equalTo" : "CWP - New Connect Order"
+      },
+      "Content-Type" : {
+        "equalTo" : "application/json"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$.['orderItem'][*].['product'][?(@.['action'] == 'cease')]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.[?(@.product.action=='cease')][?(@.requestedCompletionDate =~ /(^(?!(([0-9]{4})\\-(1[0-2]|0[1-9])\\-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9])((:([0-5][0-9]))?((TZD)|(([\\+\\-](2[0-3]|[01][0-9]):([0-5][0-9]))(:([0-5][0-9]))?))?))$).*)/)]"
+    } ]
+  },
+  "response" : {
+    "status" : 400,
+    "body" : "{\"Error Message\":\"Invalid OrderItem.requestedCompletionDate. It should be in date and time format only.\",\"Attribute Values\":{{{jsonpath this 'orderItem.*.requestedCompletionDate'}}} }",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "6dfa4a48-09c0-498f-ad2a-8842ebf2f3a0",
+  "priority" : 1
+}

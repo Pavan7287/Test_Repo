@@ -1,0 +1,30 @@
+{
+  "id" : "aedd2505-47e0-4015-a0fd-276007de759d",
+  "request" : {
+    "url" : "/orderorchestration/rest/ordermanager/productorders",
+    "method" : "POST",
+    "headers" : {
+      "Contract-Type" : {
+        "equalTo" : "CWP - New Connect Order with transition"
+      },
+      "Content-Type" : {
+        "equalTo" : "application/json"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$.['orderItem'][*].['product'].['place'][*].['contact'][*].['contactMedium'][*][?(@.['type'] == 'Telephone')]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.product.place.*.contact.*.contactMedium.[?(@.type=='Telephone')].medium[?(@.number =~ /(^(?!(\\+?([0-9]{10}|[0-9]{12}))$).*)/)]"
+    } ]
+  },
+  "response" : {
+    "status" : 400,
+    "body" : "{\"Error Message\":\"Invalid orderItem.*.product.place.*.contact.*.contactMedium.medium.number. It should be 10 or 12 digits\"}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "aedd2505-47e0-4015-a0fd-276007de759d",
+  "priority" : 1
+}

@@ -1,0 +1,28 @@
+{
+  "id" : "0e81531c-40b7-4426-b8b2-0dd0acde00d5",
+  "request" : {
+    "url" : "/orderorchestration/rest/ordermanager/productorders",
+    "method" : "POST",
+    "headers" : {
+      "Contract-Type" : {
+        "equalTo" : "CWP - New Connect Order with transition"
+      },
+      "Content-Type" : {
+        "equalTo" : "application/json"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$.orderItem.*.product.place.*.contact.*[?(@.id =~ /(^(?!(\\s*\\S[\\S\\s]*)$).*)/)]"
+    } ]
+  },
+  "response" : {
+    "status" : 400,
+    "body" : "{\"Error Message\":\"Invalid orderItem.*.product.place.*.contact.*.id\",\"Attribute Values\":{{{jsonpath this 'orderItem.*.product.place.*.contact.*.id'}}} }",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "0e81531c-40b7-4426-b8b2-0dd0acde00d5",
+  "priority" : 1
+}

@@ -1,0 +1,30 @@
+{
+  "id" : "05fb9d56-a44a-4d77-bd38-1a04d440b3ff",
+  "request" : {
+    "url" : "/orderorchestration/rest/ordermanager/productorders",
+    "method" : "POST",
+    "headers" : {
+      "Contract-Type" : {
+        "equalTo" : "CWP - New Connect Order with transition"
+      },
+      "Content-Type" : {
+        "equalTo" : "application/json"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$.['orderItem'][*].['orderItemCharacteristic'][*][?(@.['name'] == 'AppointmentNotes')]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.orderItemCharacteristic.[?(@.name=='AppointmentNotes')][?(@.value =~ /(^(?!(\\s*\\S[\\S\\s]*)$).*)/)]"
+    } ]
+  },
+  "response" : {
+    "status" : 400,
+    "body" : "{\"Error Message\":\"Invalid AppointmentNotes. It should be String only.\"}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "05fb9d56-a44a-4d77-bd38-1a04d440b3ff",
+  "priority" : 1
+}

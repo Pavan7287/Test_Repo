@@ -1,0 +1,30 @@
+{
+  "id" : "dcc49705-b158-4512-9232-5965b2824a92",
+  "request" : {
+    "url" : "/orderorchestration/rest/ordermanager/productorders",
+    "method" : "POST",
+    "headers" : {
+      "Contract-Type" : {
+        "equalTo" : "CWP - New Connect Order"
+      },
+      "Content-Type" : {
+        "equalTo" : "application/json"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$.['orderItem'][*].['orderItemCharacteristic'][*][?(@.['name'] == 'feasibilityNumber')]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.orderItemCharacteristic.[?(@.name=='feasibilityNumber')][?(@.value =~ /(^(?!(\\w+)$).*)/)]"
+    } ]
+  },
+  "response" : {
+    "status" : 400,
+    "body" : "{\"Error Message\":\"Invalid feasibilityNumber. It should be String only.\"}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "dcc49705-b158-4512-9232-5965b2824a92",
+  "priority" : 1
+}

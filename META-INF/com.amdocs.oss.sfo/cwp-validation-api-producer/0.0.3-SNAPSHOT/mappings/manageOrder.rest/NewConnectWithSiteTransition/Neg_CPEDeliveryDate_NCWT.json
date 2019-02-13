@@ -1,0 +1,30 @@
+{
+  "id" : "3725fcc0-779d-4fcd-8115-d78114fb46b2",
+  "request" : {
+    "url" : "/orderorchestration/rest/ordermanager/productorders",
+    "method" : "POST",
+    "headers" : {
+      "Contract-Type" : {
+        "equalTo" : "CWP - New Connect Order with transition"
+      },
+      "Content-Type" : {
+        "equalTo" : "application/json"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$.['orderItem'][*].['orderItemCharacteristic'][*][?(@.['name'] == 'CPEDeliveryDate')]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.orderItemCharacteristic.[?(@.name=='CPEDeliveryDate')][?(@.value =~ /(^(?!(([0-9]{4})\\-(1[0-2]|0[1-9])\\-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9])((:([0-5][0-9]))?((TZD)|(([\\+\\-](2[0-3]|[01][0-9]):([0-5][0-9]))(:([0-5][0-9]))?))?))$).*)/)]"
+    } ]
+  },
+  "response" : {
+    "status" : 400,
+    "body" : "{\"Error Message\":\"Invalid CPEDeliveryDate. It should be in date and time format only.\"}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "3725fcc0-779d-4fcd-8115-d78114fb46b2",
+  "priority" : 1
+}

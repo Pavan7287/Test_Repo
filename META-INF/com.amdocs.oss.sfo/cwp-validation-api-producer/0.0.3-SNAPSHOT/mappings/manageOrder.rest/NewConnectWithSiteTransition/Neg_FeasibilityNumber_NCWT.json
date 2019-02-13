@@ -1,0 +1,30 @@
+{
+  "id" : "deb0bb11-cd40-487f-9189-e53587e5e9b6",
+  "request" : {
+    "url" : "/orderorchestration/rest/ordermanager/productorders",
+    "method" : "POST",
+    "headers" : {
+      "Contract-Type" : {
+        "equalTo" : "CWP - New Connect Order with transition"
+      },
+      "Content-Type" : {
+        "equalTo" : "application/json"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$.['orderItem'][*].['orderItemCharacteristic'][*][?(@.['name'] == 'feasibilityNumber')]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.orderItemCharacteristic.[?(@.name=='feasibilityNumber')][?(@.value =~ /(^(?!(\\w+)$).*)/)]"
+    } ]
+  },
+  "response" : {
+    "status" : 400,
+    "body" : "{\"Error Message\":\"Invalid feasibilityNumber. It should be String only.\"}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "deb0bb11-cd40-487f-9189-e53587e5e9b6",
+  "priority" : 1
+}

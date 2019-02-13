@@ -1,0 +1,28 @@
+{
+  "id" : "34375f14-501c-47c4-bc47-67044d878029",
+  "request" : {
+    "url" : "/orderorchestration/rest/ordermanager/productorders",
+    "method" : "POST",
+    "headers" : {
+      "Contract-Type" : {
+        "equalTo" : "CWP - New Connect Order"
+      },
+      "Content-Type" : {
+        "equalTo" : "application/json"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$.orderItem.*.product.productSpecification[?(@.code =~ /(^(?!(DMCAT_ProductSpecification_000028|DMCAT_ProductSpecification_000027|DMCAT_ProductSpecification_000030|DMCAT_ProductSpecification_000073|DMCAT_ProductSpecification_000163|DMCAT_ProductSpecification_000162|DMCAT_ProductSpecification_000311|DMCAT_ProductSpecification_000312|DMCAT_ProductSpecification_000322|DMCAT_ProductSpecification_000338|DMCAT_ProductSpecification_000263)$).*)/)]"
+    } ]
+  },
+  "response" : {
+    "status" : 400,
+    "body" : "{\"Error Message\":\"Invalid orderItem.*.product.productSpecification.code\",\"Attribute Values\":{{{jsonpath this 'orderItem.*.product.productSpecification.code'}}} }",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "34375f14-501c-47c4-bc47-67044d878029",
+  "priority" : 1
+}

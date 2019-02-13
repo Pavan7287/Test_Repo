@@ -1,0 +1,158 @@
+{
+  "id" : "ddd6060e-6ed9-4ea3-8614-9137287eb343",
+  "request" : {
+    "url" : "/orderorchestration/rest/ordermanager/productorders",
+    "method" : "POST",
+    "headers" : {
+      "Contract-Type" : {
+        "equalTo" : "CWP - New Connect Order"
+      },
+      "Content-Type" : {
+        "equalTo" : "application/json"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'TenancyAdminLastName')]"
+    }, {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'SalesUserId')]"
+    }, {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'Project_Manager_Required')]"
+    }, {
+      "matchesJsonPath" : "$.['relatedParty'][*][?(@.['role'] == 'customer')]"
+    }, {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'orderCreationDate')]"
+    }, {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'Project_ID')]"
+    }, {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'customerBusinessUnit')]"
+    }, {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'SalesUserLastName')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['orderSpecificationCode'] == 'CloudSense_CPO')]"
+    }, {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'Project_Manager_phoneNumber')]"
+    }, {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'TenancyAdminEmailId')]"
+    }, {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'Project_Manager_ID')]"
+    }, {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'SalesUserFirstName')]"
+    }, {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'SalesUserContactNumber')]"
+    }, {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'TenancyAdminPhoneNumber')]"
+    }, {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'Project_Manager_emailId')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['systemId'] == 'CloudSense')]"
+    }, {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'TenancyAdminFirstName')]"
+    }, {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'orderComplexity')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['version'] == 1)]"
+    }, {
+      "matchesJsonPath" : "$.['orderCharacteristic'][*][?(@.['name'] == 'SalesUserEmailId')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.externalId =~ /([A-Za-z0-9]+)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='orderCreationDate')][?(@.value =~ /(([0-9]{4})\\-(1[0-2]|0[1-9])\\-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9])((:([0-5][0-9]))?((TZD)|(([\\+\\-](2[0-3]|[01][0-9]):([0-5][0-9]))(:([0-5][0-9]))?))?))/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='Project_Manager_Required')][?(@.value =~ /((Yes|No))/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='Project_ID')][?(@.value =~ /(\\w+)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='orderComplexity')][?(@.value =~ /((Simplex|Complex))/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='customerBusinessUnit')][?(@.value =~ /(\\w+)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='Project_Manager_ID')][?(@.value =~ /([dc]([0-9]{6}))/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='Project_Manager_phoneNumber')][?(@.value =~ /([0-9]{10})/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='Project_Manager_emailId')][?(@.value =~ /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6})/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='SalesUserId')][?(@.value =~ /([dc]([0-9]{6}))/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='SalesUserFirstName')][?(@.value =~ /([A-Za-z]+)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='SalesUserLastName')][?(@.value =~ /([A-Za-z]+)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='SalesUserContactNumber')][?(@.value =~ /([0-9]{10})/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='SalesUserEmailId')][?(@.value =~ /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6})/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='TenancyAdminFirstName')][?(@.value =~ /([A-Za-z]+)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='TenancyAdminLastName')][?(@.value =~ /([A-Za-z]+)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='TenancyAdminPhoneNumber')][?(@.value =~ /([0-9]{10})/)]"
+    }, {
+      "matchesJsonPath" : "$.orderCharacteristic.[?(@.name=='TenancyAdminEmailId')][?(@.value =~ /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6})/)]"
+    }, {
+      "matchesJsonPath" : "$.relatedParty.*[?(@.id =~ /(^\\s*\\S[\\S\\s]*)/)]"
+    }, {
+      "matchesJsonPath" : "$.relatedParty.*[?(@.name =~ /(^[^\\s]+(\\w+[\\w\\s])+)/)]"
+    }, {
+      "matchesJsonPath" : "$.relatedParty.*[?(@.type =~ /(^[^\\s]+(\\w+[\\w\\s])+)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*[?(@.id =~ /(^\\s*\\S[\\S\\s]*)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*[?(@.action =~ /(Create)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*[?(@.requestedCompletionDate =~ /(([0-9]{4})\\-(1[0-2]|0[1-9])\\-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9])((:([0-5][0-9]))?((TZD)|(([\\+\\-](2[0-3]|[01][0-9]):([0-5][0-9]))(:([0-5][0-9]))?))?))/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.orderItemCharacteristic.[?(@.name=='feasibilityNumber')][?(@.value =~ /(\\w+)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.orderItemCharacteristic.[?(@.name=='CPEDeliveryDate')][?(@.value =~ /(([0-9]{4})\\-(1[0-2]|0[1-9])\\-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9])((:([0-5][0-9]))?((TZD)|(([\\+\\-](2[0-3]|[01][0-9]):([0-5][0-9]))(:([0-5][0-9]))?))?))/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.orderItemCharacteristic.[?(@.name=='AppointmentNotes')][?(@.value =~ /(^\\s*\\S[\\S\\s]*)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.orderItemCharacteristic.[?(@.name=='notBeforeCRD')][?(@.value =~ /(([0-9]{4})\\-(1[0-2]|0[1-9])\\-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9])((:([0-5][0-9]))?((TZD)|(([\\+\\-](2[0-3]|[01][0-9]):([0-5][0-9]))(:([0-5][0-9]))?))?))/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.orderItemCharacteristic.[?(@.name=='preferredCRD')][?(@.value =~ /(([0-9]{4})\\-(1[0-2]|0[1-9])\\-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9])((:([0-5][0-9]))?((TZD)|(([\\+\\-](2[0-3]|[01][0-9]):([0-5][0-9]))(:([0-5][0-9]))?))?))/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.orderItemCharacteristic.[?(@.name=='notes')][?(@.value =~ /(.*)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.product[?(@.id =~ /(^\\s*\\S[\\S\\s]*)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.product[?(@.action =~ /((add|cease))/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.product.productSpecification[?(@.code =~ /((DMCAT_ProductSpecification_000028|DMCAT_ProductSpecification_000027|DMCAT_ProductSpecification_000030|DMCAT_ProductSpecification_000073|DMCAT_ProductSpecification_000163|DMCAT_ProductSpecification_000162|DMCAT_ProductSpecification_000311|DMCAT_ProductSpecification_000312|DMCAT_ProductSpecification_000322|DMCAT_ProductSpecification_000338|DMCAT_ProductSpecification_000263))/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.product.place.*[?(@.role =~ /((Installation))/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.product.place.*.address[?(@.id =~ /(^\\s*\\S[\\S\\s]*)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.product.place.*.contact.*[?(@.id =~ /(^\\s*\\S[\\S\\s]*)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.product.place.*.contact.*[?(@.type =~ /((Site Contact|Out of Ofc Hrs|customerProjectContact|customerTechnicalContact))/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.product.place.*.contact.*[?(@.givenName =~ /([A-z]+)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.product.place.*.contact.*[?(@.familyName =~ /([A-z]+)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.product.place.*.contact.*.contactMedium.[?(@.type=='Telephone')].medium[?(@.number =~ /(\\+?([0-9]{10}|[0-9]{12}))/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.product.place.*.contact.*.contactMedium.[?(@.type=='Email')].medium[?(@.emailAddress =~ /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6})/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.product.productRelationship.*.product[?(@.id =~ /(^\\s*\\S[\\S\\s]*)/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.product.productRelationship.*.product[?(@.action =~ /((add|cease))/)]"
+    }, {
+      "matchesJsonPath" : "$.orderItem.*.product.productRelationship.*.product.productSpecification[?(@.code =~ /((DMCAT_ProductSpecification_000018|DMCAT_ProductSpecification_000053|DMCAT_ProductSpecification_000076|DMCAT_ProductSpecification_000077|DMCAT_ProductSpecification_000074|DMCAT_ProductSpecification_000112|DMCAT_ProductSpecification_000097|DMCAT_ProductSpecification_000313|DMCAT_ProductSpecification_000315|DMCAT_ProductSpecification_000324))/)]"
+    }, {
+      "matchesJsonPath" : "$[?(@.orderItem.size() >= 19 && @.orderItem.size() <= 19)]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"status\":\"OK\"}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "ddd6060e-6ed9-4ea3-8614-9137287eb343",
+  "priority" : 2
+}
